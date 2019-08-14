@@ -65,6 +65,7 @@
     'js/passage.js',
     'js/share.js',
     'js/reward.js',
+    "auth.js",
   ].map(item => `${root}${item}`);
 
   // load after all srcs loaded

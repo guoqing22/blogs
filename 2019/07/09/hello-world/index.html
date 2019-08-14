@@ -3,7 +3,6 @@
   
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <meta name="author" content="guoqing22">
   
   
   <title>Hello World | icelab blogs</title>
@@ -15,12 +14,10 @@
   
 
   
-  <meta name="description" content="icelab blogs">
+  <meta name="description" content="iframe pom.xml">
 
   
 
-  
-    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
   
 
   
@@ -30,16 +27,18 @@
   
 
   
+    <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+  
 
   <script>
   // theme-ad's config script
   // it can be used in every script
   
   window.AD_CONFIG = {
-    leancloud: {"appid":null,"appkey":null,"comment":false,"count":true},
-    welcome: {"enable":false,"interval":30},
+    leancloud: {"appid":null,"appkey":null,"comment":false,"count":false},
+    welcome: {"enable":true,"interval":30},
     start_time: "2019-08-1",
-    passwords: ["7cb9fc59c2d43289019b8324b342505401dcaebbc780f57c7030a8fa4a1afa5d", "efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
     is_post: true,
     lock: false,
     author: "guoqing22",
@@ -170,21 +169,102 @@
         | <i class="fa fa-unlock-alt"></i>UNLOCK
       </span>
     
+    <span>
+      | <i class="fa fa-user"></i><span id="busuanzi_value_page_pv"></span>
+    </span>
   </div>
   <h1 class="passage-title">
     Hello World
   </h1>
   
+    <div class="passage-cover">
+      <figure style="background-image:url(/images/adrl.png);"></figure>
+    </div>
+  
   <article class="passage-article">
-    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;2.1.7.RELEASE&lt;/version&gt;
+        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+    &lt;/parent&gt;
+    &lt;groupId&gt;xyz.icelab&lt;/groupId&gt;
+    &lt;artifactId&gt;iframe&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;description&gt;综合框架&lt;/description&gt;
+    &lt;name&gt;iframe&lt;/name&gt;
+    &lt;packaging&gt;pom&lt;/packaging&gt;
+
+    &lt;properties&gt;
+        &lt;springfox-swagger2&gt;2.9.2&lt;/springfox-swagger2&gt;
+        &lt;springfox-swagger-ui&gt;2.9.2&lt;/springfox-swagger-ui&gt;
+        &lt;spring-cloud.version&gt;Greenwich.SR2&lt;/spring-cloud.version&gt;
+        &lt;spring-cloud-alibaba-dependencies.version&gt;2.1.0.RELEASE&lt;/spring-cloud-alibaba-dependencies.version&gt;
+    &lt;/properties&gt;
+
+    &lt;modules&gt;
+        &lt;module&gt;iframe-log&lt;/module&gt;
+        &lt;module&gt;iframe-quartz&lt;/module&gt;
+        &lt;module&gt;iframe-comment&lt;/module&gt;
+        &lt;module&gt;iframe-admin&lt;/module&gt;
+        &lt;module&gt;iframe-blog&lt;/module&gt;
+        &lt;module&gt;iframe-im&lt;/module&gt;
+        &lt;module&gt;iframe-mail&lt;/module&gt;
+        &lt;module&gt;iframe-file&lt;/module&gt;
+    &lt;/modules&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-discovery&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-config&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+            &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+            &lt;optional&gt;true&lt;/optional&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+            &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;
+            &lt;version&gt;${springfox-swagger2}&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+            &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;
+            &lt;version&gt;${springfox-swagger-ui}&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;${spring-cloud.version}&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-alibaba-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;${spring-cloud-alibaba-dependencies.version}&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+
+&lt;/project&gt;</code></pre>
 
   </article>
   <aside class="table-content" id="site-toc">
@@ -193,7 +273,7 @@
     <span>目录</span>
   </div>
   <div class="table-content-main">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    
   </div>
 </aside>
   
@@ -206,7 +286,7 @@
         </div>
       
       <div>
-        版权声明: 本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> 许可协议. 转载请注明出处!
       </div>
     </aside>
   
@@ -240,9 +320,14 @@
     </div>
     
       <div class="site-footer-info">
-        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+        <i class="fa fa-paw"></i>
+        <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span><i class="fa fa-spinner fa-spin"></i> 次</span>
       </div>
     
+    <div class="site-footer-info">
+        <i class="fa fa-paw"></i>
+        <span id="busuanzi_container_site_uv">本站总访问人数 <span id="busuanzi_value_site_uv"></span><i class="fa fa-spinner fa-spin"></i> 人</span>
+      </div>
     
       <div class="site-footer-info">
         <i class="fa fa-at"></i> Email: wang22hlj@outlook.com
@@ -250,8 +335,8 @@
     
     <div class="site-footer-info">
       <i class="fa fa-copyright"></i> 
-      2019 <a href="https://github.com/dongyuanxin/theme-ad/" target="_blank">Theme-AD</a>.
-      Created by <a href="https://godbmw.com/" target="_blank">GodBMW</a>.
+      2019 <a href="https://icelab.xyz/" target="_blank">ICELAB</a>.
+      Created by <a href="https://github.com/guoqing22/1" target="_blank">guoqing22</a>.
       All rights reserved.
     </div>
   </footer>
@@ -343,6 +428,21 @@
 </div>
     
 
+
+  <script async>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
 
 
 

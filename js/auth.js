@@ -2,8 +2,12 @@
   const auth = () => {
     const day = 60 * 60 * 24 * 1000;
     const { is_post, lock, passwords, root } = window.AD_CONFIG;
-
     if(is_post === false || lock === false) {
+      console.log("🍓🍇🍌")
+      console.log("is_post === false || lock === false")
+      console.log(is_post)
+      console.log(lock)
+      console.log("🍓🍇🍌")
       return;
     }
 
@@ -11,6 +15,11 @@
       now = new Date().getTime();
 
     if(passwords.includes(password) && now < expires) {
+      console.log("🍓🍇🍌")
+      console.log("passwords.includes(password) && now < expires")
+      console.log(password)
+      console.log("now："+now+"\texpires:"+expires)
+      console.log("🍓🍇🍌")
       return; 
     }
 
@@ -27,13 +36,13 @@
   };
 
   // print github and demo info
-  console.log(
+/*  console.log(
     '\n%c Theme-AD v2.6.0 %c' + 
     ' 🎉 https://github.com/dongyuanxin/theme-ad 🎉\n' + 
     '\n%c Preview Online %c' + 
     ' 🔍 https://godbmw.com/ 🔍  \n' , 
     'color: #fadfa3; background: #030307; padding:3px 0;', '', 'color: #fadfa3; background: #030307; padding:3px 0;', ''
-  );
+  );*/
 
   // article password auth
   auth();
